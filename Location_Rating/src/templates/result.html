@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% block body %}
+<form method="post" action="">
+    <table border="1" class="table">
+        <tr>
+            <td>Google Pluscode</td><td>{{gp}}</td>
+        </tr>
+    <tr>
+            <td>Place Details</td><td>{{d}}</td>
+        </tr>
+        <tr><td colspan="2"> <b>Hospital List</b></td></tr>
+        <tr><td> Hospital </td> <td> Plusecode</td> <td> Distance</td></tr>
+        {% for i in r %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+
+        <tr><td colspan="2"> <b>School List</b></td></tr>
+        <tr><td> School </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in sr %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+        <tr><td colspan="2"> <b>PoliceStation List</b></td></tr>
+        <tr><td> Police Station </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in pr %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+  <tr><td colspan="2"> <b>Railway Station List</b></td></tr>
+        <tr><td> Railway Station </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in rl %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+ <tr><td colspan="2"> <b>Tourist Places</b></td></tr>
+        <tr><td> Tourist Places </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in tps %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+<tr><td colspan="2"> <b>Restaurants List</b></td></tr>
+        <tr><td> Restaurants </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in Restaurants %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+<tr><td colspan="2"> <b>River List</b></td></tr>
+        <tr><td> River </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in River %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+
+        <tr><td colspan="2"> <b>Church List</b></td></tr>
+        <tr><td> Church </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in cl %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+
+
+        <tr><td colspan="2"> <b>Temple List</b></td></tr>
+        <tr><td> Temple </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in hl %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+
+
+        <tr><td colspan="2"> <b>Mosque List</b></td></tr>
+        <tr><td> Mosque </td> <td> Plusecode</td><td> Distance</td></tr>
+        {% for i in ml %}
+        <tr><td> {{i[0]}} </td> <td> {{i[1]}}</td><td> {{i[2]}}</td></tr>
+        {% endfor %}
+
+
+<tr><td colspan="2"> <b>{{w}}</b></td></tr>
+        <tr><td colspan="2"> <b>{{a}}</b></td></tr>
+        <tr><td>Rating</td><td> <b>{{rating}}</b></td></tr>
+    </table>
+</form>
+{% endblock %}

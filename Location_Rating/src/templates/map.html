@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map with Location and Road Info</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Location Information</h1>
+    <p>Name: {{ location.name }}</p>
+    <p>Latitude: {{ location.latitude }}</p>
+    <p>Longitude: {{ location.longitude }}</p>
+
+    <h1>Road Information</h1>
+    <ul>
+        {% for road in roads %}
+            <li>{{ road.name }} - Length: {{ road.length }}</li>
+        {% endfor %}
+    </ul>
+
+    <div id='map'></div>
+
+    <script>
+        mapboxgl.accessToken = 'AIzaSyB3y0szjZmNj_w2q9Vnc08ZL_FU6Z4VTFE';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [{{ location.longitude }}, {{ location.latitude }}],
+            zoom: 12
+        });
+    </script>
+</body>
+</html>
